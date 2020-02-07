@@ -136,17 +136,18 @@ public class RegionManager {
                 int protection_size = protectionItem.getCustomBlockData().getInt("protection_size");
                 if (hasRegion())   {
                     for (Region region : this.regions.values())   {
+                        Optional<RegionStatus> optProtectionSource = region.isInside(block);
                         Optional<RegionStatus> optFirstPosInside = region.isInside(new Position((block.x + protection_size), (block.y + protection_size), (block.z + protection_size), block.level));
                         Optional<RegionStatus> optSecondPosInside = region.isInside(new Position((block.x - protection_size), (block.y - protection_size), (block.z - protection_size), block.level));
-                        if (optFirstPosInside.isPresent() && optSecondPosInside.isPresent())   {
-                            if (optFirstPosInside.get() == RegionStatus.NONE && optSecondPosInside.get() == RegionStatus.NONE)   {
+                        if (optFirstPosInside.isPresent() && optSecondPosInside.isPresent() && optProtectionSource.isPresent())   {
+                            if (optFirstPosInside.get() == RegionStatus.NONE && optSecondPosInside.get() == RegionStatus.NONE && optProtectionSource.get() == RegionStatus.NONE)   {
                                 //CREATE REGION
                                 Region regionNew = new Region(player, new Vector3(block.x, block.y, block.z), protection_size, block.level.getName());
                                 this.regions.put(regionNew.getId(), regionNew);
                                 saveRegionFile(regionNew);
                                 player.sendMessage("Região protegida criada com sucesso!");
                                 return Optional.of(RegionStatus.REGION_CREATED);
-                            }else if (optFirstPosInside.get() == RegionStatus.INSIDE_BLOCK && optSecondPosInside.get() == RegionStatus.INSIDE_BLOCK)   {
+                            }else if (optFirstPosInside.get() == RegionStatus.INSIDE_BLOCK && optSecondPosInside.get() == RegionStatus.INSIDE_BLOCK && optProtectionSource.get() == RegionStatus.INSIDE_BLOCK)   {
                                 //CREATE SUBREGION
                                 Optional<RegionStatus> optIsOwner = region.isOwner(player);
                                 if (optIsOwner.isPresent())   {

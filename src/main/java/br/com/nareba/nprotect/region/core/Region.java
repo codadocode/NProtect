@@ -129,8 +129,8 @@ public class Region {
                 return Optional.of(this.regionFlag.isCanBreak());
             case "place":
                 return Optional.of(this.regionFlag.isCanPlace());
-            case "interact":
-                return Optional.of(this.regionFlag.isCanInteract());
+            case "use":
+                return Optional.of(this.regionFlag.isCanUse());
             case "chest":
                 return Optional.of(this.regionFlag.isCanUseChest());
             case "move":
@@ -156,8 +156,8 @@ public class Region {
             case "place":
                 this.regionFlag.setCanPlace(value);
                 return Optional.of(RegionStatus.SET_FLAG);
-            case "interact":
-                this.regionFlag.setCanInteract(value);
+            case "use":
+                this.regionFlag.setCanUse(value);
                 return Optional.of(RegionStatus.SET_FLAG);
             case "chest":
                 this.regionFlag.setCanUseChest(value);

@@ -3,7 +3,7 @@ package br.com.nareba.nprotect.region.flag;
 public class RegionFlag {
     private boolean canBreak;
     private boolean canPlace;
-    private boolean canInteract;
+    private boolean canUse;
     private boolean canUseChest;
     private boolean canMove;
     private boolean canPvp;
@@ -11,12 +11,12 @@ public class RegionFlag {
     private boolean canLavaBucket;
     private boolean canWaterFlow;
     private boolean canLavaFlow;
-    public RegionFlag(boolean canBreak, boolean canPlace, boolean canInteract, boolean canUseChest,
+    public RegionFlag(boolean canBreak, boolean canPlace, boolean canUse, boolean canUseChest,
                       boolean canMove, boolean canPvp, boolean canWaterBucket, boolean canLavaBucket,
                       boolean canWaterFlow, boolean canLavaFlow)   {
         this.canBreak = canBreak;
         this.canPlace = canPlace;
-        this.canInteract = canInteract;
+        this.canUse = canUse;
         this.canUseChest = canUseChest;
         this.canMove = canMove;
         this.canPvp = canPvp;
@@ -42,12 +42,12 @@ public class RegionFlag {
         this.canPlace = canPlace;
     }
 
-    public boolean isCanInteract() {
-        return canInteract;
+    public boolean isCanUse() {
+        return canUse;
     }
 
-    public void setCanInteract(boolean canInteract) {
-        this.canInteract = canInteract;
+    public void setCanUse(boolean canUse) {
+        this.canUse = canUse;
     }
 
     public boolean isCanUseChest() {

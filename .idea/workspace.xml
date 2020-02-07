@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1d0e157-698f-4b8e-992a-f48a087ce158" name="Default Changelist" comment="" />
+    <list default="true" id="b1d0e157-698f-4b8e-992a-f48a087ce158" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/nareba/nprotect/region/RegionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/nareba/nprotect/region/RegionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/nareba/nprotect/region/core/Region.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/nareba/nprotect/region/core/Region.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/nareba/nprotect/region/event/RegionEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/nareba/nprotect/region/event/RegionEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/nareba/nprotect/region/flag/FlagBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/nareba/nprotect/region/flag/FlagBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/nareba/nprotect/region/flag/RegionFlag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/nareba/nprotect/region/flag/RegionFlag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NProtect-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/NProtect-1.0-SNAPSHOT.jar" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +21,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1XMBQRAz0IiP2BmyLTqT6NT87Uc" />
   <component name="ProjectViewState">
@@ -56,26 +67,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="591" y="446" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580846351456" />
-    <state width="1877" height="116" key="GridCell.Tab.0.bottom" timestamp="1581056330694">
+    <state width="1877" height="116" key="GridCell.Tab.0.bottom" timestamp="1581106095388">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="116" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581056330694" />
-    <state width="1877" height="116" key="GridCell.Tab.0.center" timestamp="1581056330694">
+    <state width="1877" height="116" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581106095388" />
+    <state width="1877" height="116" key="GridCell.Tab.0.center" timestamp="1581106095387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="116" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581056330694" />
-    <state width="1877" height="116" key="GridCell.Tab.0.left" timestamp="1581056330694">
+    <state width="1877" height="116" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581106095387" />
+    <state width="1877" height="116" key="GridCell.Tab.0.left" timestamp="1581106095386">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="116" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581056330694" />
-    <state width="1877" height="116" key="GridCell.Tab.0.right" timestamp="1581056330694">
+    <state width="1877" height="116" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581106095386" />
+    <state width="1877" height="116" key="GridCell.Tab.0.right" timestamp="1581106095387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="116" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581056330694" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1581094236524">
+    <state width="1877" height="116" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581106095387" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1581094861863">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581094236524" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581094861863" />
     <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1581055319358">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

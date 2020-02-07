@@ -5,6 +5,8 @@ import br.com.nareba.nprotect.region.core.RegionStatus;
 import cn.nukkit.Player;
 import cn.nukkit.block.Block;
 import cn.nukkit.block.BlockDoor;
+import cn.nukkit.block.BlockFenceGate;
+import cn.nukkit.block.BlockTrapdoor;
 import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.Listener;
 import cn.nukkit.event.block.BlockBreakEvent;
@@ -30,7 +32,7 @@ public class RegionEvent implements Listener {
         Optional<RegionStatus> optBool = regionManager.can(player, block, "break");
         if (optBool.isPresent())   {
             if (optBool.get() == RegionStatus.CANT)   {
-                //player.sendMessage("Você não pode quebrar blocos nessa região!");
+                player.sendMessage("Você não pode quebrar aqui!");
                 event.setCancelled();
             }
         }
@@ -43,7 +45,7 @@ public class RegionEvent implements Listener {
         Optional<RegionStatus> optBool = regionManager.can(player, block, "place");
         if (optBool.isPresent())   {
             if (optBool.get() == RegionStatus.CANT)   {
-                //player.sendMessage("Você não pode colocar blocos nessa região!");
+                player.sendMessage("Você não pode colocar blocos aqui!");
                 event.setCancelled();
             }
         }
@@ -64,19 +66,33 @@ public class RegionEvent implements Listener {
         Player player = event.getPlayer();
         Vector3 beforePos = new Vector3(player.x, player.y, player.z);
         Block block = event.getBlock();
-        if (block.canBeActivated())   {
-            Optional<RegionStatus> optBool = regionManager.can(player, block, "interact");
+        if (block.canBeActivated() && block.getId() != Block.DIRT && block.getId() != Block.GRASS)   {
+            Optional<RegionStatus> optBool = regionManager.can(player, block, "use");
             if (optBool.isPresent())   {
                 if (optBool.get() == RegionStatus.CANT)   {
-                    if (block.getId() == Block.DOOR_BLOCK)   {
-                        BlockDoor door = (BlockDoor) block;
-                        door.toggle(player);
-                        door.toggle(player);
-                        if (!door.isOpen())   {
-                            player.teleport(beforePos);
-                        }
+                    switch(block.getId())   {
+                        case Block.DOOR_BLOCK:
+                            BlockDoor door = (BlockDoor) block;
+                            door.toggle(player);
+                            door.toggle(player);
+                            if (!door.isOpen())   {
+                                player.teleport(beforePos);
+                            }
+                            break;
+                        case Block.TRAPDOOR:
+                            BlockTrapdoor trapDoor = (BlockTrapdoor) block;
+                            if (!trapDoor.isOpen())   {
+                                player.teleport(beforePos);
+                            }
+                            break;
+                        case Block.FENCE_GATE:
+                            BlockFenceGate fenceGate = (BlockFenceGate) block;
+                            if (!fenceGate.isOpen())   {
+                                player.teleport(beforePos);
+                            }
+                            break;
                     }
-                    //player.sendMessage("Você não pode interagir nessa região!");
+                    player.sendMessage("você não pode usar blocos aqui!");
                     event.setCancelled();
                 }
             }
@@ -89,7 +105,7 @@ public class RegionEvent implements Listener {
         Optional<RegionStatus> optBool = regionManager.can(player, player.getPosition(), "move");
         if (optBool.isPresent())   {
             if (optBool.get() == RegionStatus.CANT)   {
-                //player.sendMessage("Você não pode se mover nessa região!");
+                player.sendMessage("Você não pode se mover aqui!");
                 event.setCancelled();
             }
         }

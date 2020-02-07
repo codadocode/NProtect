@@ -1,0 +1,24 @@
+name: NProtect
+main: br.com.nareba.nprotect.NProtect
+version: "1.0.0"
+api: ["1.0.5"]
+author: "Felipe 'Nareba' Pereira"
+commands:
+  nopGet:
+    usage: "/nopGet [block_id] [protection_size]"
+    description: "Cria um item do bloco de proteção"
+    permission: nprotect.nopget
+  nopFlag:
+    usage: "nopFlag [flagName] [true/false]"
+    description: "Alterna o valor de uma flag em determinada região selecionada"
+    permission: nprotect.nopflag
+permissions:
+  nprotect.nopget:
+    default: op
+    description: "Permite o usuário usar o comando /nopGet para gerar blocos de proteção."
+  nprotect.pass:
+    default: op
+    description: "Garante passe livre em todas as regiões."
+  nprotect.nopflag:
+    default: op
+    description: "Permite o usuário usar o comando /nopFlag para alternar flags de suas regiões."

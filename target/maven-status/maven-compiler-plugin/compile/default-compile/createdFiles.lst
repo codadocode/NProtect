@@ -1,0 +1,15 @@
+br\com\nareba\nprotect\BaseId.class
+br\com\nareba\nprotect\region\RegionManager.class
+br\com\nareba\nprotect\region\flag\RegionFlag.class
+br\com\nareba\nprotect\chunk\ChunkManager.class
+br\com\nareba\nprotect\region\command\RegionCommand$1.class
+br\com\nareba\nprotect\chunk\event\ChunkEvent.class
+br\com\nareba\nprotect\region\core\Region.class
+br\com\nareba\nprotect\NProtect.class
+br\com\nareba\nprotect\region\command\RegionCommand.class
+br\com\nareba\nprotect\region\flag\FlagBuilder.class
+br\com\nareba\nprotect\region\RegionManager$1.class
+br\com\nareba\nprotect\region\core\PlayerRegion.class
+br\com\nareba\nprotect\region\core\RegionId.class
+br\com\nareba\nprotect\region\core\RegionStatus.class
+br\com\nareba\nprotect\region\event\RegionEvent.class

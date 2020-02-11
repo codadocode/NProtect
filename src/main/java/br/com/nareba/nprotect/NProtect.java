@@ -2,8 +2,10 @@ package br.com.nareba.nprotect;
 
 import br.com.nareba.nprotect.region.RegionManager;
 import br.com.nareba.nprotect.region.event.RegionEvent;
+import cn.nukkit.block.BlockDoorBirch;
 import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandSender;
+import cn.nukkit.item.Item;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.TextFormat;
 

@@ -1,17 +1,37 @@
 name: NProtect
 main: br.com.nareba.nprotect.NProtect
-version: "1.0.0"
+version: "1.1.0"
 api: ["1.0.5"]
 author: "Felipe 'Nareba' Pereira"
 commands:
-  nopGet:
-    usage: "/nopGet [block_id] [protection_size]"
+  npget:
+    usage: "/<command> [block_id] [protection_size]"
     description: "Cria um item do bloco de proteção"
     permission: nprotect.nopget
-  nopFlag:
-    usage: "nopFlag [flagName] [true/false]"
+  npflag:
+    usage: "/<command> [flagName] [true/false]"
     description: "Alterna o valor de uma flag em determinada região selecionada"
     permission: nprotect.nopflag
+  npremove:
+    usage: "/<command>"
+    description: "Remove determinada região selecionada"
+    permission: nprotect.manage
+  npaddmember:
+    usage: "/<command>"
+    description: "Adiciona membro na região selecionada"
+    permission: nprotect.manage
+  npaddowner:
+    usage: "/<command>"
+    description: "Adiciona dono na região selecionada"
+    permission: nprotect.manage
+  npdelmember:
+    usage: "/<command>"
+    description: "Remove membro da região selecionada"
+    permission: nprotect.manage
+  npdelowner:
+    usage: "/<command>"
+    description: "Remove dono da região selecionada"
+    permission: nprotect.manage
 permissions:
   nprotect.nopget:
     default: op
@@ -20,5 +40,7 @@ permissions:
     default: op
     description: "Garante passe livre em todas as regiões."
   nprotect.nopflag:
-    default: op
+    default: true
     description: "Permite o usuário usar o comando /nopFlag para alternar flags de suas regiões."
+  nprotect.manage:
+    default: true

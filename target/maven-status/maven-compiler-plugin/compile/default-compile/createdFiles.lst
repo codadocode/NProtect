@@ -6,6 +6,7 @@ br\com\nareba\nprotect\region\command\RegionCommand$1.class
 br\com\nareba\nprotect\chunk\event\ChunkEvent.class
 br\com\nareba\nprotect\region\core\Region.class
 br\com\nareba\nprotect\NProtect.class
+br\com\nareba\nprotect\region\core\RegionInfo.class
 br\com\nareba\nprotect\region\command\RegionCommand.class
 br\com\nareba\nprotect\region\flag\FlagBuilder.class
 br\com\nareba\nprotect\region\RegionManager$1.class

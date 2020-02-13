@@ -126,6 +126,8 @@ public class Region {
                 return Optional.of(this.regionInfo.getRegionFlag().isCanWaterFlow());
             case "lavaflow":
                 return Optional.of(this.regionInfo.getRegionFlag().isCanLavaFlow());
+            case "putfire":
+                return Optional.of(this.regionInfo.getRegionFlag().isCanPutFire());
         }
         return Optional.empty();
     }
@@ -160,6 +162,9 @@ public class Region {
                 return Optional.of(RegionStatus.SET_FLAG);
             case "lavaflow":
                 this.regionInfo.getRegionFlag().setCanLavaFlow(value);
+                return Optional.of(RegionStatus.SET_FLAG);
+            case "putfire":
+                this.regionInfo.getRegionFlag().setCanPutFire(value);
                 return Optional.of(RegionStatus.SET_FLAG);
         }
         return Optional.of(RegionStatus.NONE);

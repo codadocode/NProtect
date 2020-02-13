@@ -78,7 +78,7 @@ public class RegionManager {
                             }
                         }
                         break;
-                    case "pvp": case "waterflow": case "lavaflow": case "waterbucket": case "lavabucket":
+                    case "pvp": case "waterflow": case "lavaflow": case "waterbucket": case "lavabucket": case "putfire":
                         Optional<RegionStatus> optPvpInside = region.isInside(position);
                         if (optPvpInside.isPresent())   {
                             if (optPvpInside.get() == RegionStatus.INSIDE_BLOCK)   {

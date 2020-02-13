@@ -75,8 +75,9 @@ public class RegionEvent implements Listener {
         Player player = event.getPlayer();
         Vector3 beforePos = new Vector3(player.x, player.y, player.z);
         Block block = event.getBlock();
+        Item item = event.getItem();
         if (event.getPlayer().getInventory().getItemInHand().getId() != Item.GOLD_AXE)   {
-            if (block.canBeActivated() && block.getId() != Block.DIRT && block.getId() != Block.GRASS)   {
+            if (block.canBeActivated() && block.getId() != Block.DIRT && block.getId() != Block.GRASS || item.getId() == Item.BUCKET || item.getId() == Item.FLINT_AND_STEEL)   {
                 Optional<RegionStatus> optBool = regionManager.check(player, block, "use", regionManager.getRegions().values());
                 if (optBool.isPresent())   {
                     if (optBool.get() == RegionStatus.CANT)   {
@@ -104,29 +105,39 @@ public class RegionEvent implements Listener {
                         }
                         player.sendMessage("você não pode usar blocos aqui!");
                         event.setCancelled();
+                    }else if (optBool.get() == RegionStatus.CAN)   {
+                        if (item.getId() == Item.BUCKET || item.getId() == Item.FLINT_AND_STEEL)   {
+                            switch (item.getName())   {
+                                case "Water Bucket":
+                                    Optional<RegionStatus> optWaterStatus = regionManager.check(player, block, "waterbucket", regionManager.getRegions().values());
+                                    if (optWaterStatus.isPresent())   {
+                                        if (optWaterStatus.get() == RegionStatus.CANT)   {
+                                            player.sendMessage("Você não pode colocar água aqui!");
+                                            event.setCancelled();
+                                        }
+                                    }
+                                    break;
+                                case "Lava Bucket":
+                                    Optional<RegionStatus> optLavaStatus = regionManager.check(player, block, "lavabucket", regionManager.getRegions().values());
+                                    if (optLavaStatus.isPresent())   {
+                                        if (optLavaStatus.get() == RegionStatus.CANT)   {
+                                            player.sendMessage("Você não pode colocar lava aqui!");
+                                            event.setCancelled();
+                                        }
+                                    }
+                                    break;
+                                case "Flint and Steel":
+                                    Optional<RegionStatus> optFlintStatus = regionManager.check(player, block, "putfire", regionManager.getRegions().values());
+                                    if (optFlintStatus.isPresent())   {
+                                        if (optFlintStatus.get() == RegionStatus.CANT)   {
+                                            player.sendMessage("Você não pode colocar fogo aqui!");
+                                            event.setCancelled();
+                                        }
+                                    }
+                                    break;
+                            }
+                        }
                     }
-                }
-            }
-            if (event.getItem().getId() == Item.BUCKET)   {
-                switch (event.getItem().getName())   {
-                    case "Water Bucket":
-                        Optional<RegionStatus> optWaterStatus = regionManager.check(player, block, "waterbucket", regionManager.getRegions().values());
-                        if (optWaterStatus.isPresent())   {
-                            if (optWaterStatus.get() == RegionStatus.CANT)   {
-                                player.sendMessage("Você não pode colocar água aqui!");
-                                event.setCancelled();
-                            }
-                        }
-                        break;
-                    case "Lava Bucket":
-                        Optional<RegionStatus> optLavaStatus = regionManager.check(player, block, "lavabucket", regionManager.getRegions().values());
-                        if (optLavaStatus.isPresent())   {
-                            if (optLavaStatus.get() == RegionStatus.CANT)   {
-                                player.sendMessage("Você não pode colocar lava aqui!");
-                                event.setCancelled();
-                            }
-                        }
-                        break;
                 }
             }
         }else   {

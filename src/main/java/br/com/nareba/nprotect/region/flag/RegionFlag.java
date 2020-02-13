@@ -11,9 +11,10 @@ public class RegionFlag {
     private boolean canLavaBucket;
     private boolean canWaterFlow;
     private boolean canLavaFlow;
+    private boolean canPutFire;
     public RegionFlag(boolean canBreak, boolean canPlace, boolean canUse, boolean canUseChest,
                       boolean canMove, boolean canPvp, boolean canWaterBucket, boolean canLavaBucket,
-                      boolean canWaterFlow, boolean canLavaFlow)   {
+                      boolean canWaterFlow, boolean canLavaFlow, boolean canPutFire)   {
         this.canBreak = canBreak;
         this.canPlace = canPlace;
         this.canUse = canUse;
@@ -24,6 +25,7 @@ public class RegionFlag {
         this.canLavaBucket = canLavaBucket;
         this.canWaterFlow = canWaterFlow;
         this.canLavaFlow = canLavaFlow;
+        this.canPutFire = canPutFire;
     }
 
     public boolean isCanBreak() {
@@ -104,5 +106,13 @@ public class RegionFlag {
 
     public void setCanLavaFlow(boolean canLavaFlow) {
         this.canLavaFlow = canLavaFlow;
+    }
+
+    public boolean isCanPutFire() {
+        return canPutFire;
+    }
+
+    public void setCanPutFire(boolean canPutFire) {
+        this.canPutFire = canPutFire;
     }
 }

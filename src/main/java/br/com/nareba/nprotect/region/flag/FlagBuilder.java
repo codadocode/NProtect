@@ -11,8 +11,9 @@ public abstract class FlagBuilder {
     private static final boolean canLavaBucket = false;
     private static final boolean canWaterFlow = false;
     private static final boolean canLavaFlow = false;
+    private static final boolean canPutFire = false;
     public static RegionFlag create()   {
         return new RegionFlag(canBreak, canPlace, canUse, canUseChest, canMove, canPvp, canWaterBucket,
-                canLavaBucket, canWaterFlow, canLavaFlow);
+                canLavaBucket, canWaterFlow, canLavaFlow, canPutFire);
     }
 }

@@ -33,6 +33,7 @@ public class RegionInfo {
     public RegionInfo(Player player, Vector3 protectionOrigin, int protection_size,String levelName, String superRegionId)   {
         this.id = new RegionId();
         this.superRegionId = superRegionId;
+        this.hasSuperRegion = true;
         this.protectionOrigin = protectionOrigin;
         this.protection_size = protection_size;
         this.levelName = levelName;

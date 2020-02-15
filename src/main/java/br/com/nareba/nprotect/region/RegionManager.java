@@ -144,6 +144,7 @@ public class RegionManager {
                                             //subRegionNew.addOwner(player);
                                             this.regions.put(subRegionNew.getId(), subRegionNew);
                                             saveRegionFile(subRegionNew);
+                                            saveRegionFile(region);
                                             player.sendMessage("Subregião protegida criada com sucesso!");
                                             return Optional.of(RegionStatus.SUBREGION_CREATED);
                                         }
